@@ -1,0 +1,25 @@
+
+
+DROP TABLE book_category;
+CREATE TABLE book_category (
+  id number(11)  NOT NULL ,
+  name varchar2(255) NOT NULL,
+ PRIMARY KEY ("ID")
+) ;
+
+--
+-- Table structure for table book
+--
+
+
+DROP TABLE book;
+  CREATE TABLE BOOK 
+   (	ID NUMBER(11,0) NOT NULL ENABLE, 
+	NAME VARCHAR2(255 BYTE) DEFAULT NULL, 
+	BOOK_CATEGORY_ID NUMBER(11,0) DEFAULT NULL NOT NULL ENABLE, 
+	 PRIMARY KEY (ID), 
+	 CONSTRAINT BOOK_FK1 FOREIGN KEY (BOOK_CATEGORY_ID)
+	  REFERENCES BOOK_CATEGORY (ID) ENABLE
+   )  ;
+  
+  
